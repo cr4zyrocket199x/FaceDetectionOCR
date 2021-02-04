@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.wonderkiln.camerakit.CameraView
+        android:id="@+id/camera"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/chooseImage">
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        </ImageView>
+    </com.wonderkiln.camerakit.CameraView>
+    <com.example.facedetectionocr.GraphicOverlay
+        android:id="@+id/graphicOver"
+        android:layout_above="@+id/chooseImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </com.example.facedetectionocr.GraphicOverlay>
+    <Button
+        android:id="@+id/chooseImage"
+        android:layout_above="@+id/detect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Image"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFFFFF">
+    </Button>
+    <Button
+        android:id="@+id/detect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Detect Face"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFFFFF">
+    </Button>
+
+</RelativeLayout>

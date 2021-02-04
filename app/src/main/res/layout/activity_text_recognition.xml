@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:background="#FFFFFF"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_textRecognition"
+        android:orientation="vertical">
+        <com.wonderkiln.camerakit.CameraView
+            android:layout_weight="5"
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/viewImage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            </ImageView>
+        </com.wonderkiln.camerakit.CameraView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:padding="16dp">
+            <TextView
+                android:textIsSelectable="true"
+                android:id="@+id/tvTextFound"
+                android:layout_margin="16dp"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:text="Click 'Choose Image' Button\nand Get text from an image!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_textRecognition"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnChooseImage"
+        android:text="Text Recognition"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFFFFF"/>
+    <Button
+        android:id="@+id/btnChooseImage"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:text="CHOOSE IMAGE"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>
